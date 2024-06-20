@@ -14,14 +14,16 @@ function createBoxes(amount) {
   input.value = "";
   let boxSize = 30;
   removeBoxes();
+  let htmlString = "";
   for (let i = 0; i < amount; i++) {
-    const box = document.createElement("div");
-    box.classList.add("box");
-    box.style.backgroundColor = getRandomHexColor();
-    box.style.width = box.style.height = `${boxSize}px`;
+    // const box = document.createElement("div");
+    // box.classList.add("box");
+    // box.style.backgroundColor = getRandomHexColor();
+    // box.style.width = box.style.height = `${boxSize}px`;
+    htmlString += `<div class="box" style="background-color: ${getRandomHexColor()}; width: ${boxSize}px; height: ${boxSize}px;"></div>`;
     boxSize += 10;
-    boxexContainer.appendChild(box);
   }
+  boxexContainer.innerHTML = htmlString;
 }
 
 const boxexContainer = document.querySelector("#boxes");
